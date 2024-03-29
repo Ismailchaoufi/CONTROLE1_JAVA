@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Affectation Employe a un project</title>
+
+    <h:outputStylesheet library="webjars" name="bootstrap/5.3.2/css/bootstrap.min.css"/>
+</h:head>
+<h:body>
+    <h2>Employe Affectation</h2>
+    <h:panelGroup style="float:right;">
+        <h:outputLink value="ListEmploye">Employees</h:outputLink>
+        <h:outputText value=" | " />
+        <h:outputLink value="#">Back to Home</h:outputLink>
+    </h:panelGroup>
+
+    <h:form>
+
+        <h:messages />
+        <h:outputLabel for="employeName">Nom de l'employé:</h:outputLabel>
+        <h:inputText id="employeName" value="#{affectationBean.employeList}" />
+
+
+
+
+        <h:panelGrid columns="2">
+            <h:outputLabel for="projectlist">Project name</h:outputLabel>
+            <h:selectOneMenu id="projectlist" value="#{affectationBean.selectedProjectId}">
+                <f:selectItems value="#{affectationBean.projectList}" />
+            </h:selectOneMenu>
+
+<!--            <h:outputLabel for="implication">Sélectionner un projet:</h:outputLabel>-->
+<!--            <h:selectOneMenu id="implication" value="#{affectationBean.selectedProject}">-->
+<!--                <f:selectItems value="#{affectationBean.projectList}" />-->
+<!--            </h:selectOneMenu>-->
+        </h:panelGrid>
+
+    </h:form>
+</h:body>
+</html>
+
+
+
+
+
+
